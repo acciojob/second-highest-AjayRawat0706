@@ -9,8 +9,17 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			let nums=arr.map(Number).sort((a, b) => b - a);
-			return nums[1];
+			if(arr.length==0 || arr.length==1){
+				return "-Infinity";
+			}
+			let nums =arr.map(Number).sort((a, b) => b - a);
+			let highest=nums[0];
+		     for(let i=1;i<nums.length;i++){
+				 if(nums[i]!=highest){ 
+					 return nums[i];
+				 }
+			 }
+			return "-Infinity"; 
 		} 
 
 		function Main() {
